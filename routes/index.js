@@ -33,7 +33,8 @@ router.get('/pass', function(req, res) {
 
 /* POST to Add User Service */
 router.post('/form', function(req, res) {
-    res.render('form', { title: 'Form!' })
+    res.location("form");
+    res.redirect("form");
 });
 
 /* POST to Add User Service */
