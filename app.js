@@ -11,7 +11,6 @@ var bodyParser = require('body-parser');
 // var db = monk('localhost:27017/nodetest1');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
