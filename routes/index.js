@@ -36,7 +36,7 @@ router.get('/pass', function(req, res) {
 router.post('/submit', function(req, res) {
     x = Math.random();
     console.log(x);
-    if (x < 0.1) {
+    if (x < 0.5) {
         res.location("pass");
         res.redirect("pass");
     }
