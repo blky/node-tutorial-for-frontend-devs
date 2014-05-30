@@ -31,6 +31,10 @@ router.get('/pass', function(req, res) {
     res.render('pass', { title: 'Validation', validate: 'Passed!' })
 });
 
+/* POST to Add User Service */
+router.post('/form', function(req, res) {
+    res.render('form', { title: 'Form!' })
+});
 
 /* POST to Add User Service */
 router.post('/submit', function(req, res) {
