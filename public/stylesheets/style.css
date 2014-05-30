@@ -3,6 +3,10 @@ body {
   font: 16px "Avenir", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+    font-family: "Avenir";
+}
+
 a {
   color: #00B7FF;
 }
