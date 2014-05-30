@@ -6,14 +6,9 @@ router.get('/', function(req, res) {
     res.render('index', { title: 'Express' });
 });
 
-/* GET Hello World page. */
-router.get('/helloworld', function(req, res) {
-	res.render('helloworld', { title: 'Hello, World!' })
-});
-
 /* GET Form page. */
 router.get('/form', function(req, res) {
-    res.render('form', { title: 'Form!' })
+    res.render('form', { title: 'Login' })
 });
 
 /* GET Validation page. */
@@ -41,13 +36,14 @@ router.post('/form', function(req, res) {
 router.post('/submit', function(req, res) {
     x = Math.random();
     console.log(x);
-    if (x < 0.9) {
+    if (x < 0.1) {
         res.location("pass");
         res.redirect("pass");
     }
     else {
-        res.location("fail");
-        res.redirect("fail");
+        // timeout
+        // res.location("fail");
+        // res.redirect("fail");
     }
 });
 
