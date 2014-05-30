@@ -27,6 +27,7 @@ router.post('/submit', function(req, res) {
     // If it worked, set the header so the address bar doesn't still say /adduser
     res.location("validation");
     // And forward to success page
+    res.redirect("validation");
 });
 
 /* POST to Add User Service */
