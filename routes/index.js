@@ -11,25 +11,22 @@ router.get('/helloworld', function(req, res) {
 	res.render('helloworld', { title: 'Hello, World!' })
 });
 
-/* GET Hello World page. */
+/* GET Form page. */
 router.get('/form', function(req, res) {
     res.render('form', { title: 'Form!' })
 });
 
-/* GET Userlist page. */
-router.get('/userlist', function(req, res) {
-    var db = req.db;
-    var collection = db.get('usercollection');
-    collection.find({},{},function(e,docs){
-        res.render('userlist', {
-            "userlist" : docs
-        });
-    });
+/* GET Validation page. */
+router.get('/validation', function(req, res) {
+    res.render('validation', { validate: 'Passed!' })
 });
 
-/* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+
+/* POST to Add User Service */
+router.post('/submit', function(req, res) {
+    // If it worked, set the header so the address bar doesn't still say /adduser
+    res.location("validation");
+    // And forward to success page
 });
 
 /* POST to Add User Service */

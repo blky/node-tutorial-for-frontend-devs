@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    h1 Form
-    form#form(name="login",method="post",action="/adduser")
+    h1=title
+    form#form(name="login",method="post",action="/submit")
         input#inputUserName(type="text", placeholder="username", name="username")
-        input#inputUserEmail(type="text", placeholder="password", name="passworld")
-        button#btnSubmit(type="submit") submit
+        input#inputUserEmail(type="password", placeholder="password", name="password")
+        button#btnSubmit.btn.btn-default(type="submit") submit
