@@ -2,4 +2,6 @@ extends layout
 
 block content
     h1(style="color:#551A8B") Hello World!
-    a(href="form")button#btnForm.btn.btn-primary(type="button") Form
+    button#btnForm.btn.btn-info(type="button") Form
+    form(action="form")
+    input(type="submit",value="Form")
