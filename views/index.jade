@@ -2,5 +2,4 @@ extends layout
 
 block content
     h1(style="color:#551A8B") Hello World!
-    form(method="post", action="/form")
-        button#btnForm.btn.btn-info(type="submit") Form
+    button#btnForm.btn.btn-info(type="submit", formaction="/form", formmethod="post") Form
