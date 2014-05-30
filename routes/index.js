@@ -35,6 +35,7 @@ router.get('/pass', function(req, res) {
 /* POST to Add User Service */
 router.post('/submit', function(req, res) {
     x = Math.random();
+    console.log(x);
     if (x < 0.1) {
         res.location("pass");
         res.redirect("pass");
