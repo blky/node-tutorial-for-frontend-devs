@@ -5,12 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// // New Code
-// var mongo = require('mongodb');
-// var monk = require('monk');
-// var db = monk('localhost:27017/nodetest1');
-
 var routes = require('./routes/index');
+app.use('/', routes);
 
 var app = express();
 
@@ -24,7 +20,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
 
 module.exports = app;
