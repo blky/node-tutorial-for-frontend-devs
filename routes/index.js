@@ -30,21 +30,21 @@ router.get('/passfail', function(req, res) {
     console.log(x);
     bool = x < 0.9;
     if (bool) {
-        res.render('pass', {xval: x, xbool: bool})
+        res.render('pass', {xval: x, xbool: bool});
     }
     else {
-        res.render('fail', {xval: x, xbool: bool})
+        res.render('fail', {xval: x, xbool: bool});
     }
 });
 
 /* GET Fail page. */
 router.get('/fail', function(req, res) {
-    res.render('fail')
+    res.render('fail');
 });
 
 /* GET Pass page. */
 router.get('/pass', function(req, res) {
-    res.render('pass')
+    res.render('pass');
 });
 
 /* POST to Add User Service */
@@ -57,14 +57,12 @@ router.post('/form', function(req, res) {
 router.post('/submit', function(req, res) {
     x = Math.random();
     console.log(x);
-    if (x < 0.9) {
-        res.location("pass");
-        res.redirect("pass");
+    bool = x < 0.9;
+    if (bool) {
+        res.render("pass", {xval: x, xbool: bool, username: req.param('username'), password: req.param('password')});
     }
     else {
         // timeout
-        // res.location("fail");
-        // res.redirect("fail");
     }
 });
 
