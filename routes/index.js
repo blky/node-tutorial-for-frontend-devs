@@ -12,18 +12,39 @@ router.get('/form', function(req, res) {
 });
 
 /* GET Validation page. */
-router.get('/validation', function(req, res) {
-    res.render('validation', { title: 'Validation', validate: 'Passed!' })
+router.get('/timeout', function(req, res) {
+    x = Math.random();
+    console.log(x);
+    bool = x < 0.9;
+    if (bool) {
+        res.render('pass', {xval: x, xbool: bool})
+    }
+    else {
+        // timeout
+    }
+});
+
+/* GET Validation page. */
+router.get('/passfail', function(req, res) {
+    x = Math.random();
+    console.log(x);
+    bool = x < 0.9;
+    if (bool) {
+        res.render('pass', {xval: x, xbool: bool})
+    }
+    else {
+        res.render('fail', {xval: x, xbool: bool})
+    }
 });
 
 /* GET Fail page. */
 router.get('/fail', function(req, res) {
-    res.render('fail', { title: 'Validation', validate: 'Failed!' })
+    res.render('fail')
 });
 
 /* GET Pass page. */
 router.get('/pass', function(req, res) {
-    res.render('pass', { title: 'Validation', validate: 'Passed!' })
+    res.render('pass')
 });
 
 /* POST to Add User Service */
